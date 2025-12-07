@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoolin Consulting Group - Empowering Smarter Business Decisions</title>
     <link rel="icon" href="assets/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,12 +14,12 @@
         }
 
         :root {
-            --primary-color: #1a1a2e;
-            --secondary-color: #0f3460;
-            --accent-color: #e94560;
-            --text-dark: #2c2c2c;
+            --primary-color: #0d2340;
+            --secondary-color: #1a4d7d;
+            --accent-color: #2b7dc4;
+            --text-dark: #1a1a1a;
             --text-light: #666;
-            --bg-light: #f8f9fa;
+            --bg-light: #f5f7fa;
             --white: #ffffff;
         }
 
@@ -96,6 +97,77 @@
             color: var(--accent-color);
         }
 
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown > a {
+            cursor: pointer;
+        }
+
+        .nav-dropdown > a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-dropdown:hover > a::after,
+        .nav-dropdown.active > a::after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            background: white;
+            min-width: 250px;
+            list-style: none;
+            padding: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 1001;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease, pointer-events 0.2s ease;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        .nav-dropdown.active .dropdown-menu {
+            display: block;
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--bg-light);
+            color: var(--accent-color);
+            padding-left: 25px;
+        }
+
         .cta-button {
             background: var(--accent-color);
             color: white;
@@ -118,7 +190,7 @@
             min-height: 85vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a1f35 0%, #133a5f 50%, #1e5a8f 100%);
             position: relative;
             overflow: hidden;
         }
@@ -251,6 +323,20 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .section-tag:hover {
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(43, 125, 196, 0.3);
+        }
+
+        .service-card.clickable {
+            cursor: pointer;
+        }
+
+        .service-card.clickable:hover {
+            transform: translateY(-12px) !important;
         }
 
         .section-title {
@@ -297,13 +383,19 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 30px;
             font-size: 36px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) translateY(-10px);
+            box-shadow: 0 10px 30px rgba(43, 125, 196, 0.3);
         }
 
         .service-card h3 {
@@ -343,6 +435,11 @@
             background: linear-gradient(135deg, var(--secondary-color), #1e4d7b);
             color: white;
             padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover .expertise-header {
+            background: linear-gradient(135deg, #0a1f35, var(--secondary-color));
         }
 
         .expertise-header h3 {
@@ -487,7 +584,7 @@
 
         .resource-image {
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -633,7 +730,7 @@
         .benefit-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -641,6 +738,12 @@
             margin: 0 auto 30px;
             font-size: 40px;
             color: white;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 10px 30px rgba(43, 125, 196, 0.3);
         }
 
         .benefit-card h4 {
@@ -858,6 +961,13 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#expertise">Expertise</a></li>
+                <li class="nav-dropdown">
+                    <a href="#services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ai-outsourcing.html">AI Outsourcing & Consulting</a></li>
+                        <li><a href="data-annotation.html">Data Annotation Services</a></li>
+                    </ul>
+                </li>
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -923,17 +1033,27 @@
                     <h3>Data Analytics Services</h3>
                     <p>Leverage statistical modeling, predictive analytics, and data visualization to turn complex data into actionable insights.</p>
                 </div>
+                <div class="service-card clickable" data-href="ai-outsourcing.html">
+                    <div class="service-icon">🤖</div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Transform your operations with AI-powered solutions including agentic AI, LLM integration, fraud detection, and intelligent automation.</p>
+                </div>
+                <div class="service-card clickable" data-href="data-annotation.html">
+                    <div class="service-icon">📝</div>
+                    <h3>Data Annotation & Labeling</h3>
+                    <p>High-quality data annotation services including text, image, video, and audio labeling to train your AI/ML models with precision.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
+            <!-- <div class="section-header">
                 <div class="section-tag">— ABOUT US</div>
                 <h2 class="section-title">Our Story</h2>
                 <p class="section-subtitle">A premier insights consulting firm dedicated to transforming data into strategic business advantages</p>
-            </div>
+            </div> -->
 
             <div class="about-content">
                 <div class="about-text">
@@ -985,23 +1105,23 @@
                     <div class="resource-content">
                         <h3>Case Studies</h3>
                         <p>Discover how we've helped businesses across industries achieve their research and analytics objectives with measurable results.</p>
-                        <a href="#case-studies" class="resource-link">View Case Studies →</a>
+                        <a href="case-study-insurance-claims.html" class="resource-link">View Case Studies →</a>
                     </div>
                 </div>
                 <div class="resource-card">
                     <div class="resource-image">📚</div>
                     <div class="resource-content">
                         <h3>Research Reports</h3>
-                        <p>Access our comprehensive market research reports and industry analysis covering key trends and emerging opportunities.</p>
-                        <a href="#" class="resource-link">Download Reports →</a>
+                        <p>Access our comprehensive insights on AI outsourcing, data annotation, and market research covering key trends and emerging opportunities.</p>
+                        <a href="blog-ai-outsourcing.html" class="resource-link">Download Reports →</a>
                     </div>
                 </div>
                 <div class="resource-card">
                     <div class="resource-image">💡</div>
                     <div class="resource-content">
                         <h3>Insights Blog</h3>
-                        <p>Stay updated with the latest insights, methodologies, and best practices in market research and data analytics.</p>
-                        <a href="#" class="resource-link">Read Blog →</a>
+                        <p>Stay updated with the latest insights, methodologies, and best practices in market research, data annotation, and AI services.</p>
+                        <a href="blog-data-annotation.html" class="resource-link">Read Blog →</a>
                     </div>
                 </div>
             </div>
@@ -1074,11 +1194,11 @@
 
             <div class="contact-links">
                 <a href="mailto:shoolinconsulting@gmail.com" class="contact-link-icon">
-                    <div class="contact-icon">📧</div>
-                    <span>shoolinconsulting@gmail.com</span>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <span>Email</span>
                 </a>
                 <a href="https://linkedin.com/company/shoolin-consulting" target="_blank" class="contact-link-icon">
-                    <div class="contact-icon">💼</div>
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                     <span>LinkedIn</span>
                 </a>
             </div>
@@ -1125,6 +1245,76 @@
             }
         });
 
+        // Dropdown menu functionality
+        const navDropdown = document.querySelector('.nav-dropdown');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        let dropdownClicked = false;
+        let closeDropdownTimeout;
+
+        if (navDropdown && dropdownMenu) {
+            // Handle click on the Services link
+            const servicesLink = navDropdown.querySelector('a');
+            if (servicesLink) {
+                servicesLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdownClicked = !dropdownClicked;
+                    if (dropdownClicked) {
+                        navDropdown.classList.add('active');
+                        clearTimeout(closeDropdownTimeout);
+                    } else {
+                        navDropdown.classList.remove('active');
+                    }
+                });
+            }
+
+            // Handle clicks on dropdown menu items
+            const dropdownItems = dropdownMenu.querySelectorAll('a');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Allow the link to navigate
+                    dropdownClicked = false;
+                    navDropdown.classList.remove('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navDropdown.contains(e.target)) {
+                    dropdownClicked = false;
+                    navDropdown.classList.remove('active');
+                }
+            });
+
+            // Keep dropdown open while cursor is in the dropdown area
+            navDropdown.addEventListener('mouseenter', () => {
+                clearTimeout(closeDropdownTimeout);
+                navDropdown.classList.add('active');
+            });
+
+            navDropdown.addEventListener('mouseleave', () => {
+                // Only close on mouse leave if not clicked
+                if (!dropdownClicked) {
+                    closeDropdownTimeout = setTimeout(() => {
+                        navDropdown.classList.remove('active');
+                    }, 100);
+                }
+            });
+
+            // Also handle mouseleave on dropdown menu directly
+            dropdownMenu.addEventListener('mouseenter', () => {
+                clearTimeout(closeDropdownTimeout);
+            });
+
+            dropdownMenu.addEventListener('mouseleave', () => {
+                if (!dropdownClicked) {
+                    closeDropdownTimeout = setTimeout(() => {
+                        navDropdown.classList.remove('active');
+                    }, 100);
+                }
+            });
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1135,6 +1325,17 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // Clickable service cards for AI and Data Annotation
+        const clickableServiceCards = document.querySelectorAll('.service-card.clickable');
+        clickableServiceCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const href = card.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
                 }
             });
         });
