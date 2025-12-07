@@ -1,4 +1,4 @@
-# Shoolin Consulting Group - robots.txt
+# Shoolin Consulting Group (SCG) - robots.txt
 # Allow all search engines to crawl and index the site
 
 User-agent: *

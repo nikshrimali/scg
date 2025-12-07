@@ -80,7 +80,7 @@
 ```html
 <meta name="description" content="...155 chars...">
 <meta name="keywords" content="market research, AI...">
-<meta name="author" content="Shoolin Consulting">
+<meta name="author" content="SCG">
 <meta property="og:title" content="...">
 <meta property="og:description" content="...">
 <meta link rel="canonical" href="https://shoolinconsulting.com/">
