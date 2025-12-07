@@ -1,0 +1,19 @@
+# Shoolin Consulting Group - robots.txt
+# Allow all search engines to crawl and index the site
+
+User-agent: *
+Allow: /
+Allow: /*.html
+Allow: /assets/
+Allow: /sitemap.xml
+
+# Disallow private or unnecessary paths
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://shoolinconsulting.com/sitemap.xml
+
+# Crawl delay (optional, prevents overwhelming the server)
+Crawl-delay: 1
