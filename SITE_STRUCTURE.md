@@ -159,7 +159,7 @@ index.html → #resources section
 
 ### Links
 - **Email**: mailto:shoolinconsulting@gmail.com
-- **LinkedIn**: https://linkedin.com/company/shoolin-consulting
+- **LinkedIn**: https://www.linkedin.com/company/shoolin-consulting-group
 
 ## 📊 Key Statistics Displayed
 

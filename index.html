@@ -88,6 +88,24 @@
             font-weight: 700;
             color: var(--primary-color);
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -1240,7 +1258,12 @@
 <body>
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Shoolin Consulting</div>
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="assets/icon.png" alt="Shoolin Consulting Logo">
+                </div>
+                <span>Shoolin Consulting Group</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#expertise">Expertise</a></li>
@@ -1306,10 +1329,10 @@
                     <h3>Consumer Insights</h3>
                     <p>Understand consumer behavior, motivations, and needs through focus groups, surveys, and customer journey mapping.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Performance Analytics</h3>
-                    <p>Track brand equity, customer satisfaction, and ROI with our KPI development, monitoring, and real-time performance dashboards.</p>
+                <div class="service-card clickable" data-href="business-insights.html">
+                    <div class="service-icon">�</div>
+                    <h3>Business Insights</h3>
+                    <p>Transform data into strategic business intelligence with Power BI dashboards. Gain market insights, competitive analysis, and real-time analytics for informed decisions.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
@@ -1480,7 +1503,7 @@
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <span>Email</span>
                 </a>
-                <a href="https://linkedin.com/company/shoolin-consulting" target="_blank" class="contact-link-icon">
+                <a href="https://www.linkedin.com/company/shoolin-consulting-group" target="_blank" class="contact-link-icon">
                     <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                     <span>LinkedIn</span>
                 </a>
@@ -1508,12 +1531,12 @@
                 <h4>Connect</h4>
                 <ul>
                     <li><a href="mailto:shoolinconsulting@gmail.com">Email</a></li>
-                    <li><a href="https://linkedin.com/company/shoolin-consulting" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/company/shoolin-consulting-group" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Shoolin Consulting Group. All rights reserved.</p>
+            <p>© 2025 Shoolin Consulting Group. All rights reserved.</p>
         </div>
     </footer>
 
